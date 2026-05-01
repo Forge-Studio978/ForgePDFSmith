@@ -34,3 +34,11 @@ npm run dev
 ## Notes
 - Public user responses are **never** stored on the server.
 - PDF extraction can fail for scanned PDFs; admin manual editing is supported.
+
+
+## Hardening updates
+- PDF upload validation enforces MIME type and 25MB limit with explicit error responses.
+- PDF conversion now classifies heading/list/table-like blocks and adds fallback section when extraction fails.
+- Public responses autosave safely with error handling for disabled/full storage.
+- HTML export escapes content to avoid script injection and improves print/mobile readability.
+- ICS generation now validates dates/times, escapes text, clamps durations/reminders, and safely handles recurrence weekdays.
